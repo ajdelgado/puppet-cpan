@@ -46,7 +46,7 @@
 class cpan (
   Boolean $manage_package,
   Hash $config_hash,
-  Variable $package_name,
+  Any $package_name,
   Optional[Array[String[1]]] $config_file = undef,
   Optional[Array[String[1]]] $config_dir = undef,
   String $package_ensure    = 'present',
@@ -54,8 +54,8 @@ class cpan (
   String $installdirs       = 'site',
   Boolean $local_lib         = false,
   String $config_template   = 'cpan/cpan.conf.erb',
-  Variable $ftp_proxy         = undef,
-  Variable $http_proxy        = undef,
+  Any $ftp_proxy         = undef,
+  Any $http_proxy        = undef,
   Array $urllist           = [],
 ) {
   anchor { 'cpan::begin': }
